@@ -195,15 +195,6 @@ Structure.prototype.remove = function ()
   stage.removeComponent(self.struct);
 }
 
-
-Structure.prototype.addStructureToSelectMenu = function ()
-{
-      //Adding chain's:
-      $test=$("<li></li>").append($("<div></div>").html("HOLA"));
-      $("#chainMenu").append($test);
-      $("#selectMenu").menu("refresh");
-}
-
 Structure.prototype.createDefaultRepresentation = function ()
 {
   for(var i=0; i<this.residueType.length; i++)
@@ -212,6 +203,27 @@ Structure.prototype.createDefaultRepresentation = function ()
   }
 }
 
+Structure.prototype.createArrayWithChainNames = function ()
+{
+
+  var self=this;
+  self.chainName=[];
+
+  var resStore=self.struct.structure.residueStore;
+  var chainStore=self.struct.structure.chainStore;
+  var chain;
+  var chainName;
+
+  for(var i=0; i<resStore.count; i++)
+  {
+    chain=resStore.chainIndex[i];
+    chainName=chainStore.getChainname(chain);
+    if(self.chainName.indexOf(chainName)==-1 && chainName.length!=0)
+    {
+      self.chainName.push(chainName);
+    }
+  }
+};
 
 
 
@@ -268,6 +280,19 @@ ResidueType.prototype.typeOfResidue=function(resObject)
   self.isRNA=resObject.isRna();
   self.isSaccharide=resObject.isSaccharide();
   self.isWater=resObject.isWater();
+
+  if(self.isHetero==false && self.isProtein==true)
+  {
+    self.isStdAminoAcid=true;
+  }
+  else if(self.isHetero==true && self.isProtein==false)
+  {
+    self.isStdAminoAcid=false;
+  }
+  else if(self.struct.protein==false)
+  {
+    self.isStdAminoAcid=false;
+  }
 }
 //WORKS PERFECT
 ResidueType.prototype.addToMindMap=function()
@@ -289,7 +314,11 @@ ResidueType.prototype.addToMindMap=function()
   {
     parentMindMapNode=this.struct.ligandsMindMap;
   }
+  else {
+      parentMindMapNode=this.struct.ligandsMindMap;
+  }
 
+  console.log(parentMindMapNode);
   mindMapNode=mindMap.root.createNewNode(parentMindMapNode, this.name, function(self){
     if(self.active==true)
     {

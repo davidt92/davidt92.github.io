@@ -257,12 +257,12 @@ BallStickRepresentation.prototype.selectionToArrayAndSetSelection=function(val)
   {
     inputArray.push("-")
   }
-
+  
   for(var i=0; i< inputArray.length; i++)
   {
     if(/^[a-zA-Z]+$/.test(inputArray[i])==true&&inputArray[i].length==3)
     {
-      var ret=this.fromResTypeToResPositionAndChainName(inputArray[i]);
+      var ret=self.fromResTypeToResPositionAndChainName(inputArray[i]);
       residuesPosition=residuesPosition.concat(ret[0]);
       residuesChainName=residuesChainName.concat(ret[1]);
     }

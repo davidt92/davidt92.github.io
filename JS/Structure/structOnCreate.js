@@ -10,7 +10,7 @@ Structure.prototype.onCreateStructure = function (struct)
     self.createVariableVisible();
     self.addStructureToMindMap();
     self.createAtomsObject();
-    self.addStructureToSelectMenu();
+    self.createArrayWithChainNames();
 
     var layerArrayPos = self.addLayer("DEFAULT");
 
@@ -24,7 +24,7 @@ Structure.prototype.onCreateStructure = function (struct)
     self.BallStick.createVariableSelectedResidues(); //Creates the cache variable self.BallStick._selectedResidues (position and chain) that have to exists before creating residueType (Cause will be a propety of the class)
     self.addResidues(struct); //Creates variable self.residueType, this one will have a nested array with all the types of residues in the structure, inside each tipe will be information of the position of all the residues of this type
     self.BallStick.residueType=self.residueType;
-    //self.BallStick.selectionToArrayAndSetSelection(BallStickRepr.repr.selection.string);
+    self.addOptionsToMenuSelect(); //This method is at menuSelect.js
 };
 
 

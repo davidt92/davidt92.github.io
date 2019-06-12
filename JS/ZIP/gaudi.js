@@ -144,8 +144,9 @@ function loadAsyncfileToStage(fileObject, loadingOrderArray, iteration)
 
              if(loadingOrderArray[iteration+1]!=undefined)
              {
+               index=1;
                loadAsyncfileToStage(fileObject, loadingOrderArray, iteration+1);
-            }
+             }
           });
       }
       });

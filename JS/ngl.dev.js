@@ -57176,7 +57176,6 @@ function Polymer( structure, residueIndexStart, residueIndexEnd ){
     this.residueIndexStart = residueIndexStart;
     this.residueIndexEnd = residueIndexEnd;
     this.residueCount = residueIndexEnd - residueIndexStart + 1;
-
     var rpStart = this.structure.getResidueProxy( this.residueIndexStart );
     var rpEnd = this.structure.getResidueProxy( this.residueIndexEnd );
     this.isPrevConnected = rpStart.getPreviousConnectedResidue() !== undefined;
@@ -57187,7 +57186,7 @@ function Polymer( structure, residueIndexStart, residueIndexEnd ){
 
     this.__residueProxy = this.structure.getResidueProxy();
 
-    // console.log( this.qualifiedName(), this );
+     console.log( this.qualifiedName(), this );
 
 }
 
@@ -57630,7 +57629,7 @@ ChainProxy.prototype = {
 
                 if( bbType1 !== UnknownBackboneType ){
                     if( rp1.index - rStartIndex > 1 ){
-                        // console.log("FOO1",rStartIndex, rp1.index)
+                      //  console.log("FOO1",rStartIndex, rp1.index)
                         callback( new Polymer( structure, rStartIndex, rp1.index ) );
                     }
                 }
@@ -57643,8 +57642,8 @@ ChainProxy.prototype = {
 
             if( !ap1 || !ap2 || !ap1.connectedTo( ap2 ) ||
                 ( test && ( !test( rp1 ) || !test( rp2 ) ) ) ){
-                if( rp1.index - rStartIndex > 1 ){
-                    // console.log("FOO2",rStartIndex, rp1.index)
+                if( rp1.index - rStartIndex >= 1 ){
+                   //  console.log("FOO2",rStartIndex, rp1.index)
                     callback( new Polymer( structure, rStartIndex, rp1.index ) );
                 }
                 rStartIndex = rNextIndex;
@@ -72585,10 +72584,8 @@ CartoonRepresentation.prototype = Object.assign( Object.create(
 
         var bufferList = [];
         var polymerList = [];
-
         this.structure.eachPolymer( function( polymer ){
-
-            if( polymer.residueCount < 4 ) return;
+            if( polymer.residueCount < 1 ) return; // In order to visualize only one residue in Cartoon
             polymerList.push( polymer );
 
             var spline = this.getSpline( polymer );

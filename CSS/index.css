@@ -314,6 +314,15 @@ input[type=textbox]
     border-bottom-right-radius: 5px;
 }
 
+.menuBarButton
+{
+    background-color: green;
+    border: 3px solid black;
+    width: auto;
+    margin: 0;
+    border-bottom-right-radius: 5px;
+}
+
 .removeRepresentation
 {
   -webkit-transition: all 1.1s ease-in-out;

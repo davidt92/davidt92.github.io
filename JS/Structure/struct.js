@@ -1,7 +1,7 @@
 //getter setter of _residuesBallStickSelection residuesBS
 function Structure(struct, ligand)
 {
-  var self=this;
+  self=this;
 
   self.layers=[];
   self.div;
