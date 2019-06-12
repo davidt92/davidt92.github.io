@@ -1,0 +1,324 @@
+body {
+   margin: 0;
+   padding: 0;
+/*   background: rgb(86, 86, 86);*/ /*Cambiar */
+}
+body:fullscreen
+{
+  background: rgb(86, 86, 86);
+}
+
+.right
+{
+  margin-left: 0px;
+  float: right;
+  width: 30%;
+}
+
+.viewport
+{
+  position: relative;
+  margin-left: 0px;
+  float: left;
+  width: 70%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.panelMenu /*cambiar nom */
+{
+  width: 100%;
+  height: 5vh;
+  border-bottom-left-radius: 1.5em;
+  background-color: rgb(38, 38, 38);
+}
+.rightPanel /*Nomes engloba la barra de dal i la del mitj el mindmap no*/
+{
+  position: relative; /* Per tal de que els objectes al interior de aquest vaigin relatius a el pare */
+  height: 90vh;
+  /*background-color: rgb(86, 86, 86);*/
+}
+
+.menuBar
+{
+  position: absolute;
+  top: 0;
+  margin-left: 51px;
+  width: 100%;
+  height: 20px;
+  background-color: green;
+}
+
+ul.selectMenu{
+  margin-left: 55px;
+  top: 20px;
+}
+
+
+div.vertical-line{
+    width: 1px; /* Line width */
+    background-color: black; /* Line color */
+    height: 100%; /* Override in-line if you want specific height. */
+    float: left; /* Causes the line to float to left of content.
+      You can instead use position:absolute or display:inline-block
+      if this fits better with your design */
+  }
+
+.mindMap
+{
+  position: absolute;
+  margin-top: auto;
+  right: 0px;
+  bottom: 0px;
+  width: 30%;
+  //border-top-left-radius: 3em;
+  background-color: rgb(89,89,89);
+  border-top: 1px solid black;
+  height: 10vh;
+
+  text-align: center;
+  vertical-align: middle;
+  line-height: 10vh;
+}
+.mindMapHover
+{
+  position: absolute;
+  margin-top: auto;
+  right: 0px;
+  bottom: 0px;
+  width: 45%;
+  //border-top-left-radius: 3em;
+  background-color: rgb(89,89,89);
+  border-top: 1px solid black;
+  height: 100vh;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 10vh;
+  border-radius: 0px;
+}
+.transition
+{
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+.containerOpenButton
+{
+  position: absolute;/* Per tal de que aquests objectes es posicionin segons el pare */
+  top: 50%;
+  margin-top: -15px;
+  height: 30px;
+  right: 30px;
+  background-color: green;
+  border: 3px solid green;
+  border-radius: 5px;
+}
+.containerCloseButton
+{
+  position: absolute;/* Per tal de que aquests objectes es posicionin segons el pare */
+  top: 30px;
+  right: 30px;
+  background-color: green;
+  border: 3px solid green;
+  border-radius: 5px;
+  z-index: 10;
+}
+.CMD
+{
+  position: absolute;/* Per tal de que aquests objectes es posicionin segons el pare */
+  width: 100%;
+  bottom: 30px;
+  height: 70px;
+  left: 0;
+}
+
+.CMDBOX
+{
+  position: absolute;
+  bottom: 0px;
+  margin-left: 20px;
+  width: 80%;
+}
+.CMDBUTTON
+{
+  position: absolute;
+  bottom: 0px;
+  left: 85%;
+  background-color: green;
+  border: 3px solid green;
+  border-radius: 5px;
+}
+.HelpBox
+{
+  color: green;
+  margin-left: 2vw;
+  font-size: medium;
+}
+
+
+.panelLayers
+{
+  position: absolute;
+  top:0vh;
+  margin-top: 5vh;
+  width: 100%;
+  height: 85vh;
+  /*clear: both;*/
+  overflow-y: scroll;
+
+}
+.panelBox
+{
+  position: relative;
+  height: 80px;
+  /*background-color: red;*/
+}
+.checkBox
+{
+  float: left;
+  width: 30px;
+  height: 50px;
+  line-height: 45px;
+  border: 3px solid #73AD21;
+  border-radius: 30px;
+}
+.Structure
+{
+  padding-left: 5px;
+  /*
+  margin-left: 5px;*/
+  margin-top: 5px;
+}
+.Layer
+{
+  padding-left: 35px;
+  /*
+  margin-left: 35px; */
+}
+.SubLayer
+{
+  padding-left: 70px;
+  /*
+  margin-left: 70px;*/
+}
+.checkBoxChecked
+{
+  background:rgb(115, 173, 33);
+}
+.textStructureLayer
+{
+  font-size: medium;
+  margin-left: 45px;
+  margin-right: 40px;
+  padding-left: 5px;
+  height: 50px;
+  line-height: 55px;
+  border: 3px solid rgb(232,76,61);
+  border-radius: 30px;
+  text-align:center;
+  text-transform: uppercase; /*TEST */
+  color: white;
+  background-color: rgb(89,89,89);
+}
+.textSublayer
+{
+  text-align:center;
+  margin-left: 45px;
+  margin-right: 40px;
+  padding-left: 5px;
+  height: 50px;
+  /*line-height: 45px;*/
+  border: 3px solid rgb(232,76,61);
+  border-radius: 30px;
+  text-transform: uppercase;
+  color: white;
+  background-color: rgb(89,89,89);
+  /*font-family: 'Arsenal', sans-serif;*/
+}
+.textBoxSubLayer /*S'ha de cambiar*/
+{
+  /*
+  clear:both;
+  margin-right: 5px;*/
+  /*
+  margin-left: 45px;
+  margin-right: 5px;
+  padding-left: 5px;*/
+  width: 80%;
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+}
+.addSublayerButton
+{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  margin-right: 5px;
+  height: 55px;
+  width: 30px;
+  line-height: 42px;
+  border: 2px solid #73AD21;
+  border-radius: 30px;
+  background-color:  #73AD21;
+  color: white;
+}
+.select {
+  border: 2px solid gray;
+}
+
+
+
+/*SA DE MODIFICAR NOMES ES UNA PROVA  */
+
+input[type=text]
+{
+  border: 3px solid #73AD21;
+  border-radius: 30px;
+  padding: 3px;
+}
+input[type=textbox]
+{
+  border: 3px solid #73AD21;
+  border-radius: 30px;
+  padding: 3px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+.inputParametersLayer
+{
+  width: 180px;
+  display: inline-block;
+  text-align: right;
+  text-align: top;
+  padding-right: 5px;
+}
+.menuButton
+{
+    position: absolute;
+    background-color: green;
+    border: 3px solid green;
+    width: auto;
+    margin: 0;
+    border-bottom-right-radius: 5px;
+}
+
+.removeRepresentation
+{
+  -webkit-transition: all 1.1s ease-in-out;
+  -moz-transition: all 1.1s ease-in-out;
+  -o-transition: all 1.1s ease-in-out;
+  -ms-transition: all 1.1s ease-in-out;
+  transition: all 1.1s ease-in-out;
+}

@@ -1,0 +1,29 @@
+h1 {
+  margin-top:0;
+  margin-right: 20px;
+  float:left;
+}
+a#download {
+  display: block;
+  padding-top: 0.7em;
+  color: #fff;
+  position:relative;
+  z-index:2;
+}
+h3 {
+  float: right;
+  margin-right: 130px;
+}
+#instr {
+  clear:left;
+  padding-left:1em;
+}
+#container {
+  position:fixed;
+  width:45%;
+  height:100vh;
+  display: none;
+  z-index:1;
+  bottom: 0px;
+  right: 0px;
+}

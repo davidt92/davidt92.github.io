@@ -1,0 +1,12 @@
+<script>
+$(document).ready(function(){
+    $insilichemImage=$('<img>',{id:'theImg',src:'./Images/logo_white.svg'}).css("width","30%");
+    $startImageDiv=$("<div></div>").css("background-color", "green").css("width","30%");
+    $($startImageDiv).append($($insilichemImage));
+    $('body').append($($startImageDiv));
+    $($startImageDiv).center();
+    /*setTimeout(function(){
+      $($startImage).remove();
+    }, 5000);*/
+});
+</script>

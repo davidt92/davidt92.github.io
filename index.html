@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>GAUDIWEB</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Arsenal:700" rel="stylesheet">
+
+    <link rel="stylesheet" href="./CSS/index.css" type="text/css">
+
+    <!-- ZIP -->
+    <script type="text/javascript" src="./JS/zip.js"></script>
+    <script type="text/javascript" src="./JS/zip-fs.js"></script>
+    <script type="text/javascript" src="./JS/ZIP/dataview.js"></script>
+    <script type="text/javascript" src="./JS/ZIP/config.js"></script>
+
+    <!--MindMap-->
+    <link rel="stylesheet" href="./CSS/MindMap/mindMap.css" type="text/css">
+    <link rel="stylesheet" href="./CSS/MindMap/styles.css" type="text/css">
+
+    <!-- popUp -->
+    <link rel="stylesheet" href="./popUpExtendedOptions/extendDialog.js" type="text/css">
+
+    <!-- Material design -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <style>
+  .ui-menu {
+    position: absolute;
+    width: 150px;
+    top: 54px;
+    z-index: 2;
+   }
+  </style>
+
+  </head>
+
+  <body>
+      <!-- MENU -->
+      <ul id="menu" style="display: none">
+        <li><div>File</div>
+          <ul>
+            <li><div id="openMenu">Open</div></li>
+            <li><div id="openGaudiMenu">Open Gaudi</div></li>
+            <li><div id="screenShotMenu">Screenshot</div></li>
+            <li><div id="closeAll">Close All</div></li>
+          </ul>
+        </li>
+        <li><div>View</div>
+          <ul>
+            <li><div>Theme</div>
+              <ul>
+                <li><div id="lightThemeMenu">Light Theme</div></li>
+                <li><div id="darkThemeMenu">Dark theme</div></li>
+              </ul>
+            </li>
+            <li><div>Projection</div>
+              <ul>
+                <li><div id="prespectiveMenu">Prespective</div></li>
+                <li><div id="orthographicMenu">Orthographic</div></li>
+              </ul>
+            </li>
+            <li><div>Spin</div>
+              <ul>
+                <li><div id="spinOnMenu">Spin on</div></li>
+                <li><div id="spinOffMenu">Spin off</div></li>
+              </ul>
+            </li>
+            <li><div id="fullScreenMenu">Full Screen</div></li>
+          </ul>
+        </li>
+        <li><div id="settings">Settings</div></li>
+        <li><div>Documentation</div></li>
+      </ul>
+
+      <!-- Select Menu  -->
+      <ul id="selectMenu" style="display: none" class="selectMenu">
+        <li><div>Chain</div>
+          <ul id="chainMenu"> <!-- Aqui san de carregar totes les cadendes de la estructura, quan cliki sa de cambiar la visualitzacio -->
+          </ul>
+        </li>
+        <li><div>Chemistry</div>
+          <ul id="chemistryMenu"></ul>
+        </li>
+        <li><div>Residue</div>
+          <ul id="residueMenu"></ul>
+        </li>
+        <li><div>Structure</div>
+          <ul id="structureMenu"></ul>
+        </li>
+      </ul>
+
+
+    <script type="text/javascript" src="./JS/ngl.dev.js"></script>
+    <div id="viewport" class="viewport">
+      <div class="menuButton" id="menuButton"><img src="./Images/logo_white.svg" style="width:45px"></div>
+      <div class="menuBar">
+        <input type="button" id="selectMenuButton" value="Select"/>
+        <input type="button" id="actionsMenuButton" value="Actions"/>
+      </div>
+      <div class="CMD">
+        <div class="HelpBox" id="HelpBox"></div>
+        <input type="textbox" name="CMDBOX" id="CMDBox" class="CMDBOX"></input>
+        <input type="button" name="CMDBUTTON" id="CMDBUTTON" class="CMDBUTTON" value="CMD"></input>
+      </div>
+    </div>
+    <div class="rightPanel right" style="background-image: url(./Images/test2.jpg); background-size: 100% auto;">
+        <div class="panelMenu"></div>
+        <div class="panelLayers" id="panelLayer"></div>
+    </div>
+
+    <!-- Mind Map DIV -->
+    <div class="mindMap transition" id="mindMap" >MIND MAP<input type="button" class="containerOpenButton" id="containerButton" value="OPEN"></input><div id="container"></div></div>
+
+    <!-- For the mindmap-->
+    <ul id="structure" style="display: none">
+      <li><div><span>GAUDIWEB</span></div></li>
+    </ul>
+
+    <!-- popUp Extender -->
+    <script type="text/javascript" src="./popUpExtendedOptions/extendDialog.js"></script>
+
+    <!-- CMD -->
+    <script type="text/javascript" src="./JS/CMD.js"></script>
+    <script type="text/javascript" src="./JS/CMDFunctions.js"></script>
+
+    <!-- SEND EMAIL -->
+    <script type="text/javascript" src="./JS/sendEmail.js"></script>
+
+    <!-- Structure -->
+    <script type="text/javascript" src="./JS/Structure/struct.js"></script>
+    <script type="text/javascript" src="./JS/Structure/structOnCreate.js"></script>
+    <script type="text/javascript" src="./JS/Structure/structurePrototype.js"></script>
+    <script type="text/javascript" src="./JS/Structure/ligandPrototype.js"></script>
+    <script type="text/javascript" src="./JS/Structure/structRepr.js"></script>
+    <script type="text/javascript" src="./JS/Structure/structSetGet.js"></script>
+
+    <!-- Menu's -->
+    <script type="text/javascript" src="./JS/menu.js"></script>
+    <script type="text/javascript" src="./JS/menuSelect.js"></script>
+
+    <!--MindMap-->
+    <script type="text/javascript" src="./JS/MindMap/buzzmap.js"></script>
+    <script type="text/javascript" src="./JS/MindMap/mindMap.js"></script>
+    <script type="text/javascript" src="./JS/MindMap/raphael.min.js"></script>
+
+    <!-- StructuratedInfo -->
+    <!--<script type="text/javascript" src="./JS/GaudiWeb/structuratedInfo.js"></script>
+    <script type="text/javascript" src="./JS/GaudiWeb/structuratedInfoMindMap.js"></script>-->
+
+    <!-- Clicked on atoms -->
+    <script type="text/javascript" src="./JS/clickedAtoms.js"></script>
+
+    <!-- Setters and Getters -->
+    <script type="text/javascript" src="./JS/newSetterGetter.js"></script>
+
+    <!-- popUp's -->
+    <script type="text/javascript" src="./JS/Structure/popUpStructure.js"></script>
+
+    <!-- Prototypes -->
+    <script type="text/javascript" src="./JS/Prototype.js"></script>
+
+    <!-- CREATE CANVAS -->
+    <script>
+      $(document).ready(function()
+      {
+        //$("#container").width($("#container").width()/0.3); //Solves problem to create svg
+        stage = new NGL.Stage( "viewport",{backgroundColor: "black"});
+        startOnCanvasClick(stage);
+      });
+
+      $(document).ready(function()
+      {
+
+        $("#containerButton").click(function(){
+          if($(this).val()=="OPEN")
+          {
+            $("#mindMap").removeClass("mindMap").addClass("mindMapHover");
+            $(this).removeClass("containerOpenButton").addClass("containerCloseButton");
+            $("#containerButton").val("X");
+            $("#container").show();
+          }
+          else
+          {
+            $("#mindMap").removeClass("mindMapHover").addClass("mindMap");
+            $(this).removeClass("containerCloseButton").addClass("containerOpenButton");
+            $("#containerButton").val("OPEN");
+            $("#container").hide();
+          }
+        });
+
+          $('.ui-state-active').css("background","green");
+
+          //Debugging options, if error and email to my personal address david.teixe@e-campus.uab.cat will be sended
+          //sendEmail("",)
+        /*  window.onerror = function(msg, url, linenumber)
+          {
+              alert("UNEXPECTED ERROR OCURRED \nA message with the error will be send to the Developer & webpage will be reloaded");
+              var error='Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber
+              sendEmail("ERROR IN GAUDIWEB",error);
+              location.reload();
+            return true;
+          }*/
+
+      });
+     //Automatic resize canvas
+      window.addEventListener("resize",function(){stage.handleResize()});
+      struct=[];
+      </script>
+    <script type="text/javascript" src="./JS/ZIP/gaudi.js"></script>
+
+    <script>
+    $(document).ready(function(){
+        $insilichemImage=$('<img>',{id:'theImg',src:'./Images/logo_white.svg'}).css("width","20%").css("background-color", "green").css("padding","1%").css("border-radius","15px");
+        $('body').append($($insilichemImage));
+        $($insilichemImage).center();
+        setTimeout(function(){
+          $($insilichemImage).remove();
+        }, 3000);
+    });
+    </script>
+  </body>
+</html>
